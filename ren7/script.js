@@ -2,7 +2,7 @@
    CLIENT PANEL – ADMIN CONNECTED
    ===================================== */
 
-const CURRENT_USER = "awx";        // username client
+const CURRENT_USER = "ren7";        // username client
 const ADMIN_WA = "6281617922247";  // WA admin
 
 function getOrders() {
@@ -53,14 +53,14 @@ function loadClient() {
   const myOrder = orders.filter(o => o.user === CURRENT_USER).pop();
   if (!myOrder) return;
 
-  ipInfo.innerText = myOrder.ip || "--";
-  specInfo.innerText = myOrder.product || "--";
-  osInfo.innerText = myOrder.os || "--";
-  regionInfo.innerText = myOrder.region || "--";
+  ipInfo.innerText = myOrder.ip || "162.726.27:2221";
+  specInfo.innerText = myOrder.product || "2GB - 2vCPU";
+  osInfo.innerText = myOrder.os || "Windows Server 2012 R2";
+  regionInfo.innerText = myOrder.region || "Canada";
   userName.innerText = myOrder.rdp_user || myOrder.user;
 
-  buyDate.innerText = myOrder.start || "--";
-  expireDate.innerText = myOrder.end || "--";
+  buyDate.innerText = myOrder.start || "04-02-2026 12:32:40";
+  expireDate.innerText = myOrder.end || "04-02-2026 12:40:00";
 
   updateCountdown(myOrder.end);
 
